@@ -6,12 +6,12 @@ env:
   AZURE_WEBAPP_NAME: michaljohn007-ttt-app
   
 on:
-  pull_request:
-    types: [labeled]
+  push:
+    branches:
+      - main
     
 jobs:
   build:
-    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
