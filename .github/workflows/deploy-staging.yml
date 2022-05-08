@@ -3,7 +3,7 @@ name: Stage the app
 env:
   DOCKER_IMAGE_NAME: michaeljohn007-azure-ttt
   IMAGE_REGISTRY_URL: docker.pkg.github.com
-  AZURE_WEBAPP_NAME: michaeljohn007-ttt-app
+  AZURE_WEBAPP_NAME: michaljohn007-ttt-app
   
 on:
   pull_request:
@@ -67,7 +67,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: ${{env.AZURE_WEBAPP_NAME}}
-          images: ${{env.IMAGE_REGISTRY_URL}}/michaljohn007/devops-p9/${{env.DOCKER_IMAGE_NAME}}:${{ github.sha }}
+          images: ${{env.IMAGE_REGISTRY_URL}}/michaeljohn007/devops-p9/${{env.DOCKER_IMAGE_NAME}}:${{ github.sha }}
           
       - name: Azure logout
         run: |
