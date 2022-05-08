@@ -11,7 +11,7 @@ on:
     
 jobs:
   build:
-    if: contains(gitgub.event.pull_request.labels.*.name, 'stage')
+    if: contains(github.event.pull_request.labels.*.name, 'stage')
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
