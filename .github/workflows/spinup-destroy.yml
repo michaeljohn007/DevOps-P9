@@ -7,7 +7,7 @@ on:
 env:
   AZURE_RESOURCE_GROUP: cd-with-actions
   AZURE_APP_PLAN: actions-ttt-deployment
-  AZURE_LOCATION: "North Europe"
+  AZURE_LOCATION: '"North Europe"'
   AZURE_WEBAPP_NAME: michaljohn007-ttt-app
   
 jobs:
