@@ -13,7 +13,7 @@ jobs:
   build:
     if: contains(gitgub.event.pull_request.labels.*.name, 'stage')
     runs-on: ubuntu-latest
-    permissions: read-all|write-all
+    permissions: write-all
     steps:
       - uses: actions/checkout@v2
       - name: npm install and build webpack
@@ -27,7 +27,7 @@ jobs:
           
   Build-Docker-Image:
     runs-on: ubuntu-latest
-    permissions: read-all|write-all
+    permissions: write-all
     needs: build
     name: Build imag and store in GitHub Packages
     steps:
@@ -48,7 +48,7 @@ jobs:
           
   Deploy-to-Azure:
     runs-on: ubuntu-latest
-    permissions: read-all|write-all
+    permissions: write-all
     needs: Build-Docker-Image
     name: Deploy app container to Azure
     steps:
